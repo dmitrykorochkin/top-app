@@ -1,9 +1,11 @@
-import styles from "@/styles/globals.css";
+
 
 export default function Home(): JSX.Element {
   return (
     <div>
-      <h1 className={styles.h1}>44</h1>
+      <h1>Текст1</h1>
+      <h2>Текст2</h2>
+      <h3>Текст3</h3>
     </div>
   );
 }
