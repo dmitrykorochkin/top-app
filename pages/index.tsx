@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import styles from "@/styles/globals.css";
 
 export default function Home(): JSX.Element {
   return (
