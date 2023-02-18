@@ -37,8 +37,10 @@ a {
 :root {
   --black: #3b434e;
   --white: #ffffff;
-  --primary: #3B434E;
+  --primary: #377ee2;
+  --primary-hover: #3680e7;
   --red: #DE0000;
   --green: #1DC37E;
-  --light-green: #C8F8E4;
+  --green-light: #C8F8E4;
+  --gray-light: #ebebeb;
 }
