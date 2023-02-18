@@ -1,5 +1,3 @@
-
-
 * {
   box-sizing: border-box;
 }
@@ -8,14 +6,42 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans", sans-serif;
-  color:var(--black);
-  background-color: #F5F6F8;
+  color: var(--black);
+  background-color: #f5f6f8;
+  font-size: 62.5%;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
+button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.4rem;
+  outline: none;
+}
 
+.primary {
+  color: var(--white);
+  background-color: var(--primary);
+}
+.primary:hover {
+  background-color: var(--primary-hover);
+}
+.ghost {
+  color: var(--black);
+  background-color: none;
+  border: 1px solid var(--gray-light);
+}
+.ghost:hover {
+  background-color: var(--primary);
+}
 .h1 {
   font-weight: 500;
   font-size: 26px;
@@ -37,8 +63,10 @@ a {
 :root {
   --black: #3b434e;
   --white: #ffffff;
-  --primary: #3B434E;
-  --red: #DE0000;
-  --green: #1DC37E;
-  --light-green: #C8F8E4;
+  --primary: #377ee2;
+  --primary-hover: #1c4680;
+  --red: #de0000;
+  --green: #1dc37e;
+  --green-light: #c8f8e4;
+  --gray-light: #ebebeb;
 }
