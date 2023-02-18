@@ -1,5 +1,3 @@
-
-
 * {
   box-sizing: border-box;
 }
@@ -8,8 +6,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans", sans-serif;
-  color:var(--black);
-  background-color: #F5F6F8;
+  color: var(--black);
+  background-color: #f5f6f8;
 }
 a {
   text-decoration: none;
@@ -38,9 +36,9 @@ a {
   --black: #3b434e;
   --white: #ffffff;
   --primary: #377ee2;
-  --primary-hover: #3680e7;
-  --red: #DE0000;
-  --green: #1DC37E;
-  --green-light: #C8F8E4;
+  --primary-hover: #1c4680;
+  --red: #de0000;
+  --green: #1dc37e;
+  --green-light: #c8f8e4;
   --gray-light: #ebebeb;
 }
