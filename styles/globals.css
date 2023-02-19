@@ -10,6 +10,16 @@ body {
   background-color: #f5f6f8;
   font-size: 62.5%;
 }
+:root {
+  --black: #3b434e;
+  --white: #ffffff;
+  --primary: #377ee2;
+  --primary-hover: #1c4680;
+  --red: #de0000;
+  --green: #1dc37e;
+  --green-light: #c8f8e4;
+  --gray-light: #ebebeb;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -60,13 +70,20 @@ button {
   line-height: 27px;
   margin: 0;
 }
-:root {
-  --black: #3b434e;
-  --white: #ffffff;
-  --primary: #377ee2;
-  --primary-hover: #1c4680;
-  --red: #de0000;
-  --green: #1dc37e;
-  --green-light: #c8f8e4;
-  --gray-light: #ebebeb;
+
+.p {
+  margin: 0;
+}
+.fz-s {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+.fz-m {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.fz-l {
+  font-size: 1.8rem;
+  line-height: 2.9rem;
 }
