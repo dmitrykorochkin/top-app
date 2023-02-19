@@ -87,3 +87,45 @@ button {
   font-size: 1.8rem;
   line-height: 2.9rem;
 }
+
+.tag {
+    display: inline-block;
+  box-sizing: border-box;
+  margin-right: 5px;
+  border-radius: 20px;
+}
+
+.tag--s {
+    padding: 5px 10px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+.tag--m {
+    padding: 5px 10px;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+.teg--ghost {
+  border: 1px solid var(--gray-light);
+}
+.teg--red {
+  color: var(--white);
+  background-color: var(--red);
+  font-weight: bold;
+}
+teg--.gray {
+  color: var(--white);
+  background-color: var(--gray);
+  font-weight: bold;
+}
+.teg--primary {
+  color: var(--primary);
+  background-color: none;
+  border: 1px solid var(--primary);
+}
+.teg--green {
+  color: var(--green);
+  background-color: var(--green-light);
+  font-weight: bold;
+}
