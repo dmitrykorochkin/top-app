@@ -8,7 +8,7 @@ export default function Home(): JSX.Element {
       <button className="ghost">Button</button>
       <P size="l">Большой</P>
       <P>Средний</P>
-      <P size="m">Маленький</P>
+      <P size="s">Маленький</P>
     </div>
   );
 }
