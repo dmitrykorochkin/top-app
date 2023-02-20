@@ -1,1 +1,1 @@
-import React from 'react';
+export * from './Rating/Rating';

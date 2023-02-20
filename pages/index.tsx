@@ -1,3 +1,4 @@
+import { Rating } from "../components";
 
 
 export default function Home(): JSX.Element {
@@ -14,6 +15,8 @@ export default function Home(): JSX.Element {
       <div className="tag tag--m tag--green">Тег2</div>
       <div className="tag tag--s tag--primary">Тег3</div>
       <div className="tag tag--m tag--ghost">Тег4</div>
+
+      <Rating rating={4}></Rating>
     </div>
   );
 }
