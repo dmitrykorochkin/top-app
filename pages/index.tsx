@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Rating } from "../components";
 
-
 export default function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <div>
       <h1>APP TOP</h1>
@@ -16,7 +18,7 @@ export default function Home(): JSX.Element {
       <div className="tag tag--s tag--primary">Тег3</div>
       <div className="tag tag--m tag--ghost">Тег4</div>
 
-      <Rating rating={4}></Rating>
+      <Rating rating={rating} isEditable setRating={setRating}></Rating>
     </div>
   );
 }
