@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Rating } from "../components";
 
+
 export default function Home(): JSX.Element {
-  const [rating, setRating] = useState<number>(4);
+
+  const STAR_COUNT = 4; // 5 items, start from 0
+  
+  const [rating, setRating] = useState<number>(STAR_COUNT);
 
   return (
     <div>
