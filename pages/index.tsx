@@ -1,3 +1,4 @@
+import { Layout } from "@/layout/Layout";
 import { useState } from "react";
 import { Rating } from "../components";
 
@@ -9,7 +10,7 @@ export default function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(STAR_COUNT);
 
   return (
-    <div>
+    <Layout>
       <h1>APP TOP</h1>
       <button className="primary">Button</button>
       <button className="ghost">Button</button>
@@ -23,6 +24,6 @@ export default function Home(): JSX.Element {
       <div className="tag tag--m tag--ghost">Тег4</div>
 
       <Rating rating={rating} isEditable setRating={setRating}></Rating>
-    </div>
+    </Layout>
   );
 }
