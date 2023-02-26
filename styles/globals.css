@@ -10,6 +10,10 @@ body {
   background-color: #f5f6f8;
   font-size: 62.5%;
 }
+html {
+  overflow-y: hidden;
+}
+
 :root {
   --black: #3b434e;
   --white: #ffffff;
@@ -89,19 +93,19 @@ button {
 }
 
 .tag {
-    display: inline-block;
+  display: inline-block;
   box-sizing: border-box;
   margin-right: 5px;
   border-radius: 20px;
 }
 
 .tag--s {
-    padding: 5px 10px;
+  padding: 5px 10px;
   font-size: 1.2rem;
   line-height: 1.4rem;
 }
 .tag--m {
-    padding: 5px 10px;
+  padding: 5px 10px;
   font-size: 1.4rem;
   line-height: 1.4rem;
 }

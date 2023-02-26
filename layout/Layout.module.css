@@ -1,34 +1,43 @@
 .wrapper {
   display: grid;
-  grid-template-columns: auto 230px minmax(320px, 1200px) auto;  /*слева справа - авто, сайдбар 230px body 320px - 1200px*/
+  grid-template-columns: auto 230px minmax(320px, 1200px) auto; /*слева справа - авто, сайдбар 230px body 320px - 1200px*/
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  grid-template-areas: 
-  ". header header ."
-  ". sidebar body ."
-  "footer footer footer footer";
+  gap: 0 30px;
+  grid-template-areas:
+    ". header header ."
+    ". sidebar body ."
+    "footer footer footer footer";
 }
 
 .header {
   grid-area: header;
   display: none;
+  font-size: 2rem;
 }
 .footer {
   grid-area: footer;
 }
 .sidebar {
   grid-area: sidebar;
+  font-size: 2rem;
 }
 .body {
   grid-area: body;
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-  .header {
-    display: block;
+  .wrapper {
+    grid-template-columns: minmax(320px, 1fr);
+    grid-template-areas:
+      "header"
+      "body"
+      "footer";
   }
 }
-
+.sidebar {
+  display: none;
+}
+.header {
+  display: block;
+}
