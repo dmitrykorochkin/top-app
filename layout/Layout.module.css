@@ -23,3 +23,12 @@
   grid-area: body;
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .header {
+    display: block;
+  }
+}
+
