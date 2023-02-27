@@ -1,6 +1,8 @@
 import { withLayout } from "@/layout/Layout";
 import { useState } from "react";
 import { Rating } from "../components";
+import axios from "axios";
+import { GetStaticProps } from "next";
 
 function Home(): JSX.Element {
   const STAR_COUNT = 4; // 5 items, start from 0
@@ -27,3 +29,12 @@ function Home(): JSX.Element {
 }
 
 export default withLayout(Home);
+
+export const getStaticProps: GetStaticProps = async () => {
+  const firstCategory = 0
+  return {
+    props: {
+
+    }
+  }
+}
