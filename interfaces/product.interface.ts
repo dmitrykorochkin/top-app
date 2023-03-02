@@ -29,8 +29,8 @@ export interface ProductModel {
   __v:number;
   image:string;
   initialRating:number;
-  reviews: any[];
+  reviews: ReviewModel[];
   reviewCount: number;
-  reviewAvg: any;
+  reviewAvg: ReviewModel;
   advantages:string;
 }
