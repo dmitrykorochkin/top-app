@@ -5,7 +5,7 @@ import axios from "axios";
 import { GetStaticProps } from "next";
 import { MenuItem } from "@/interfaces/menu.interfaces";
 
-function Home({ menu}: HomeProps): JSX.Element {
+function Home({ menu }: HomeProps): JSX.Element {
   const STAR_COUNT = 4; // 5 items, start from 0
 
   const [rating, setRating] = useState<number>(STAR_COUNT);
