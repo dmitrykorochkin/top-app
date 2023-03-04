@@ -47,5 +47,5 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];
-  firstCategory: string;
+  firstCategory: number;
 }

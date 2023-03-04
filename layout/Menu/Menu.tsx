@@ -2,11 +2,15 @@ import cn from "classnames";
 import styles from "./Menu.module.css";
 import { format } from "date-fns";
 import { AppContext } from "@/context/app.context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export const Menu = (): JSX.Element => {
 
   const {menu, setMenu, firstCategory} = useContext(AppContext);
+
+  useEffect(() => {
+    setMenu && setMenu([]);
+  })
 
   return (
     <div>
