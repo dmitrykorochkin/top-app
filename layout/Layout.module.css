@@ -36,7 +36,7 @@
   }
 }
 .sidebar {
-  display: none;
+  display: block;
 }
 .header {
   display: block;
