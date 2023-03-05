@@ -7,11 +7,35 @@ import { FirstLevelMenuItem } from "@/interfaces/menu.interfaces";
 import CoursesIcon from "./icons/courses.svg"
 import ServicesIcon from "./icons/services.svg"
 import BooksIcon from "./icons/books.svg"
-import GoodsIcon from "./icons/goods.svg"
+import ProductsIcon from "./icons/products.svg"
+import { TopLevelCategory } from "@/interfaces/page.interface";
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
-  {route: 'courses'; name: 'Курсы'; }
-]
+  {
+    route: "courses",
+    name: "Курсы",
+    icon: <CoursesIcon />,
+    id: TopLevelCategory.Courses
+  },
+  {
+    route: "courses",
+    name: "Сервисы",
+    icon: <ServicesIcon />,
+    id: TopLevelCategory.Services
+  },
+  {
+    route: "courses",
+    name: "Книги",
+    icon: <BooksIcon />,
+    id: TopLevelCategory.Books
+  },
+  {
+    route: "courses",
+    name: "Продукты",
+    icon: <ProductsIcon />,
+    id: TopLevelCategory.Products
+  }
+];
 
 export const Menu = (): JSX.Element => {
 
