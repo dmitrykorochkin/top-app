@@ -5,6 +5,7 @@ import axios from "axios";
 import { GetStaticProps } from "next";
 import { MenuItem } from "@/interfaces/menu.interfaces";
 
+
 function Home({ menu }: HomeProps): JSX.Element {
   const STAR_COUNT = 4; // 5 items, start from 0
 
@@ -38,6 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
     process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
     { firstCategory }
   );
+
   return {
     props: {
       menu,
