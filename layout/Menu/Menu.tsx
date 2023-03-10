@@ -1,6 +1,5 @@
 import cn from "classnames";
 import styles from "./Menu.module.css";
-import { format } from "date-fns";
 import { AppContext } from "@/context/app.context";
 import { useContext, useEffect } from "react";
 import { FirstLevelMenuItem, PageItem } from "@/interfaces/menu.interfaces";
@@ -18,24 +17,26 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
     id: TopLevelCategory.Courses
   },
   {
-    route: "courses",
+    route: "services",
     name: "Сервисы",
     icon: <ServicesIcon />,
     id: TopLevelCategory.Services
   },
   {
-    route: "courses",
+    route: "books",
     name: "Книги",
     icon: <BooksIcon />,
     id: TopLevelCategory.Books
   },
   {
-    route: "courses",
+    route: "products",
     name: "Продукты",
     icon: <ProductsIcon />,
     id: TopLevelCategory.Products
   }
 ];
+
+
 
 export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
@@ -44,19 +45,24 @@ export const Menu = (): JSX.Element => {
     return (
       <>
         {firstLevelMenu.map((m) => {
-          <div key={m.route}>
-            <a href={`/${m.route}`}>
-              <div
-                className={cn(styles.firstLevel, {
-                  [styles.firstLevelActive]: m.id == firstCategory
-                })}
-              >
-                {m.icon}
-                <span>{m.name}</span>
+          return (
+            <>
+              <div key={m.route}>
+                <a href={`/${m.route}`}>
+                  <div
+                    className={cn(styles.firstLevel, {
+                      [styles.firstLevelActive]: m.id == firstCategory
+                    })}
+                  >
+                    {m.icon}
+                    <span>{m.name}</span>
+                  </div>
+                </a>
+                {m.id == firstCategory && buildSecondLevel(m)}
               </div>
-            </a>
-            {m.id == firstCategory && buildSecondLevel(m)}
-          </div>;
+              ;
+            </>
+          );
         })}
       </>
     );
@@ -81,6 +87,7 @@ export const Menu = (): JSX.Element => {
   };
   const buildThridLevel = (pages: PageItem[], route: string) => {
     return pages.map((p, index) => (
+      
       <a
         key={index}
         href={`/${route}/${p.alias}`}
@@ -94,7 +101,7 @@ export const Menu = (): JSX.Element => {
   };
 
   useEffect(() => {
-    setMenu && setMenu([]);
+    setMenu && ([]);
   });
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>;
