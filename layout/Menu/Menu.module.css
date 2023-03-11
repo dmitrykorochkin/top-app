@@ -19,6 +19,7 @@
 
 .secondLevel {
   margin-bottom: 10px;
+  margin-left: 10px;
   cursor: pointer;
   text-transform: uppercase;
   color: var(--gray-dark);
@@ -33,11 +34,19 @@
 
   border-left: 1px solid #dfdfdf;
 }
+.secondLevelBlock {
+  display: none;
+}
+.secondLevelBlockOpened {
+  display: block;
+}
 .secondLevelBlockOpened:last-child {
   margin-bottom: 20px;
+  display: block;
 }
 .thirdLevel {
   margin-bottom: 10px;
+  margin-left: 10px;
   display: block;
   cursor: pointer;
   color: var(--gray-dark);
