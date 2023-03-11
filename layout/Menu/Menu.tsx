@@ -8,6 +8,7 @@ import ServicesIcon from "./icons/services.svg";
 import BooksIcon from "./icons/books.svg";
 import ProductsIcon from "./icons/products.svg";
 import { TopLevelCategory } from "@/interfaces/page.interface";
+import Link from "next/link";
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -36,8 +37,6 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
   }
 ];
 
-
-
 export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
 
@@ -48,16 +47,19 @@ export const Menu = (): JSX.Element => {
           return (
             <>
               <div key={m.route}>
-                <a href={`/${m.route}`}>
-                  <div
-                    className={cn(styles.firstLevel, {
-                      [styles.firstLevelActive]: m.id == firstCategory
-                    })}
-                  >
-                    {m.icon}
-                    <span>{m.name}</span>
-                  </div>
-                </a>
+                <Link href={`/${m.route}`}>
+                  <a>
+                    <div
+                      className={cn(styles.firstLevel, {
+                        [styles.firstLevelActive]: m.id == firstCategory
+                      })}
+                    >
+                      {m.icon}
+                      <span>{m.name}</span>
+                    </div>
+                  </a>
+                </Link>
+
                 {m.id == firstCategory && buildSecondLevel(m)}
               </div>
               ;
@@ -69,14 +71,15 @@ export const Menu = (): JSX.Element => {
   };
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
-      <div  className={styles.secondBlock}>
-        {menu.map(m => (
+      <div className={styles.secondBlock}>
+        {menu.map((m) => (
           <div key={m._id.secondCategory}>
             <div className={styles.secondLevel}>{m._id.secondCategory}</div>
             <div
               className={cn(styles.secondLevelBlock, {
                 [styles.secondLevelBlockOpened]: m.isOpened
-              })}>
+              })}
+            >
               {buildThridLevel(m.pages, menuItem.route)}
             </div>
           </div>
@@ -87,21 +90,21 @@ export const Menu = (): JSX.Element => {
   };
   const buildThridLevel = (pages: PageItem[], route: string) => {
     return pages.map((p, index) => (
-      
-      <a
-        key={index}
-        href={`/${route}/${p.alias}`}
-        className={cn(styles.thirdLevel, {
-          [styles.thirdLevelActive]: false
-        })}
-      >
-        {p.category}
-      </a>
+      <Link href={`/${route}/${p.alias}`}>
+        <a
+          key={index}
+          className={cn(styles.thirdLevel, {
+            [styles.thirdLevelActive]: false
+          })}
+        >
+          {p.category}
+        </a>
+      </Link>
     ));
   };
 
   useEffect(() => {
-    setMenu && ([]);
+    setMenu && [];
   });
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>;
