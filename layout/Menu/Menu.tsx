@@ -41,33 +41,29 @@ export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
 
   const buildFirstLevel = () => {
-    return (
-      <>
-        {firstLevelMenu.map((m) => {
-          return (
-            <>
-              <div key={m.route}>
-                <Link href={`/${m.route}`}>
-                  <a>
-                    <div
-                      className={cn(styles.firstLevel, {
-                        [styles.firstLevelActive]: m.id == firstCategory
-                      })}
-                    >
-                      {m.icon}
-                      <span>{m.name}</span>
-                    </div>
-                  </a>
-                </Link>
+    return <>
+      {firstLevelMenu.map((m) => {
+        return <>
+          <div key={m.route}>
+            <Link href={`/${m.route}`}>
 
-                {m.id == firstCategory && buildSecondLevel(m)}
+              <div
+                className={cn(styles.firstLevel, {
+                  [styles.firstLevelActive]: m.id == firstCategory
+                })}
+              >
+                {m.icon}
+                <span>{m.name}</span>
               </div>
-              ;
-            </>
-          );
-        })}
-      </>
-    );
+
+            </Link>
+
+            {m.id == firstCategory && buildSecondLevel(m)}
+          </div>
+          ;
+        </>;
+      })}
+    </>;
   };
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
     return (
@@ -90,16 +86,16 @@ export const Menu = (): JSX.Element => {
   };
   const buildThridLevel = (pages: PageItem[], route: string) => {
     return pages.map((p, index) => (
-      <Link href={`/${route}/${p.alias}`}>
-        <a
-          key={index}
-          className={cn(styles.thirdLevel, {
-            [styles.thirdLevelActive]: false
-          })}
-        >
-          {p.category}
-        </a>
-      </Link>
+      (<Link
+        href={`/${route}/${p.alias}`}
+        key={index}
+        className={cn(styles.thirdLevel, {
+          [styles.thirdLevelActive]: false
+        })}>
+
+        {p.category}
+
+      </Link>)
     ));
   };
 
